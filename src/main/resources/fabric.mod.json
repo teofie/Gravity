@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "gravitymod",
+  "version": "${version}",
+  "name": "Gravity 1.0",
+  "icon": "assets/gravitymod/icon.png",
+  "description": "/gravity [value] to configure gravity for players, mobs and dropped items.",
+  "authors": [
+    "teofie"
+  ],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.gravitymod.GravityMod"
+    ]
+  },
+  "mixins": [
+    "gravitymod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

@@ -1,13 +1,13 @@
 package com.example.gravitymod;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.CommandManager.RegistrationEnvironment;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 
 public final class GravityCommand {
     private GravityCommand() {
@@ -17,12 +17,24 @@ public final class GravityCommand {
                                 CommandRegistryAccess registryAccess,
                                 RegistrationEnvironment environment) {
         dispatcher.register(CommandManager.literal("gravity")
-                .then(CommandManager.argument("value", IntegerArgumentType.integer(0, 100))
+                .executes(context -> {
+                    ServerCommandSource source = context.getSource();
+                    if (source.getPlayer() == null) {
+                        return 0;
+                    }
+                    ServerPlayNetworking.send(source.getPlayer(), new GravityUpdatePayload(
+                            GravityManager.getGravityPercent(),
+                            GravityManager.isAutomatic(),
+                            GravityManager.getAutomaticIntervalSeconds(),
+                            GravityManager.isAutomaticIncreasing()
+                    ));
+                    return 1;
+                })
+                .then(CommandManager.literal("check")
                         .executes(context -> {
-                            int value = IntegerArgumentType.getInteger(context, "value");
-                            GravityManager.setGravityPercent(value);
                             ServerCommandSource source = context.getSource();
-                            source.sendFeedback(() -> Text.translatable("commands.gravity.set", value), true);
+                            int value = GravityManager.getGravityPercent();
+                            source.sendFeedback(() -> Text.translatable("commands.gravity.check", value), false);
                             return value;
                         })));
     }

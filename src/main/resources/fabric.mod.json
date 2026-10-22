@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "gravitymod",
   "version": "${version}",
-  "name": "Gravity 1.0",
+  "name": "Gravity",
   "icon": "assets/gravitymod/icon.png",
   "description": "/gravity [value] to configure gravity for players, mobs and dropped items.",
   "authors": [
@@ -12,6 +12,9 @@
   "entrypoints": {
     "main": [
       "com.example.gravitymod.GravityMod"
+    ],
+    "client": [
+      "com.example.gravitymod.GravityClient"
     ]
   },
   "mixins": [

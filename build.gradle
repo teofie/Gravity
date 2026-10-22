@@ -47,7 +47,7 @@ jar {
 }
 
 tasks.named('remapJar') {
-    archiveFileName = 'Gravity 1.0.jar'
+    archiveFileName = 'Gravity.jar'
 }
 
 publishing {

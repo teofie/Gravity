@@ -1,8 +1,11 @@
-# Gravity 1.0
+# Gravity
 
 Fabric mod for Minecraft 1.21.11.
 
 `/gravity [value] to configure gravity for players, mobs and dropped items.`
+
+Use `/gravity` without parameters to open the configuration screen. Use
+`/gravity check` to display the current gravity value.
 
 ## Features
 
@@ -11,6 +14,7 @@ Fabric mod for Minecraft 1.21.11.
 - 0% removes gravity and preserves vertical velocity.
 - Gravity affects players, mobs and dropped items.
 - Fall damage is adjusted according to gravity.
+- Manual slider and automatic gravity changes over time.
 
 ## Requirements
 
@@ -23,7 +27,7 @@ Fabric mod for Minecraft 1.21.11.
 
 1. Install Fabric Loader for Minecraft 1.21.11.
 2. Install Fabric API for Minecraft 1.21.11.
-3. Copy `Gravity 1.0.jar` into the instance `mods` folder.
+3. Copy `Gravity.jar` into the instance `mods` folder.
 4. Start Minecraft with the Fabric profile.
 5. Use `/gravity <value>` in-game.
 

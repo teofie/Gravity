@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "Gravity",
   "icon": "assets/gravitymod/icon.png",
-  "description": "/gravity [value] to configure gravity for players, mobs and dropped items.",
+  "description": "Your game, your gravity.",
   "authors": [
     "teofie"
   ],

@@ -2,3 +2,5 @@
 build/
 .vscode/
 *.log
+/Gravity.jar
+/release/

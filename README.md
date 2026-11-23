@@ -2,13 +2,13 @@
 
 > Your game, your gravity.
 
-**Current release: v2.0** · Minecraft 1.21.11 · Fabric
+**Current release: v3.0** · Minecraft 1.21.11 · Fabric
 
 Gravity lets you adjust the world's gravity while playing. Configure it manually with an in-game slider or enable automatic changes over time.
 
 ## Download
 
-Download the latest `Gravity-2.0.jar` from the [v2.0 GitHub release](https://github.com/teofie/Gravity-Mod/releases/tag/v2.0). The original v1.0 release is preserved separately as [v1.0.0](https://github.com/teofie/Gravity-Mod/releases/tag/v1.0.0).
+Download `Gravity.jar` from the [v3.0 GitHub release](https://github.com/teofie/Gravity/releases/tag/v3.0). Earlier releases remain available: [v2.0](https://github.com/teofie/Gravity/releases/tag/v2.0) and the original [v1.0.0](https://github.com/teofie/Gravity/releases/tag/v1.0.0).
 
 ## Features
 
@@ -18,6 +18,16 @@ Download the latest `Gravity-2.0.jar` from the [v2.0 GitHub release](https://git
 - Fall damage scales with the configured gravity.
 - Automatically increase or decrease gravity by one percentage point at a configurable interval. Automatic changes stop at 0% or 100%.
 - Save gravity and automatic-mode settings with the world. Settings are restored when the world is loaded again.
+- Use the redesigned compact settings screen, which scales to the game window and keeps controls legible when the window is resized.
+- See the animated planet logo and the `Your game, your gravity.` tagline in the settings screen.
+
+## What's new in v3.0
+
+- Rebuilt the settings screen with a minimal, futuristic layout while retaining every existing gravity control.
+- Rescaled the interface to about half of the game window's diagonal and made it adapt to window resizing.
+- Preserved edited control values while Minecraft relayouts the screen after a resize.
+- Clarified the vanilla baseline: 50% gravity is vanilla gravity (1.0x).
+- Kept the animated planet logo, tagline, and `/gravity check` command.
 
 ## Commands
 
@@ -29,7 +39,7 @@ Automatic intervals accept seconds (`30s`), minutes (`1m`), hours (`1h`), or a n
 ## Installation
 
 1. Install Fabric Loader for Minecraft 1.21.11 and add Fabric API to the same game instance.
-2. Download `Gravity-2.0.jar` from the [v2.0 release](https://github.com/teofie/Gravity-Mod/releases/tag/v2.0) and place it in the instance's `mods` folder.
+2. Download `Gravity.jar` from the [v3.0 release](https://github.com/teofie/Gravity/releases/tag/v3.0) and place it in the instance's `mods` folder.
 3. Launch Minecraft with the Fabric profile.
 4. Run `/gravity` in a world to configure gravity.
 
